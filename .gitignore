@@ -6,3 +6,4 @@ __pycache__/
 .DS_Store
 .playwright-mcp/
 .spotify_token.json
+/art/

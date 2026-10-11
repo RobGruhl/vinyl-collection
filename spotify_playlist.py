@@ -5,6 +5,7 @@ http://127.0.0.1:8888/callback, then pass its Client ID (PKCE login, no secret n
 
   poetry run python spotify_playlist.py --client-id ID --dry-run   # show album matches only
   poetry run python spotify_playlist.py --client-id ID             # create the playlist
+  poetry run python spotify_playlist.py --client-id ID --cover art.png --playlist PLAYLIST_ID  # set its cover
 
 Album matches are cached in spotify_matches.json; set an entry to a Spotify album ID to
 override a wrong match, to a list of track IDs to add just those tracks, or to null to
@@ -25,15 +26,15 @@ import webbrowser
 from pathlib import Path
 
 REDIRECT = "http://127.0.0.1:8888/callback"
-SCOPES = "playlist-modify-public playlist-modify-private"
+SCOPES = "playlist-modify-public playlist-modify-private ugc-image-upload"
 TOKEN = Path(".spotify_token.json")
 MATCHES = Path("spotify_matches.json")
 API = "https://api.spotify.com/v1"
 
 
 def login(client_id):
-    if TOKEN.exists():
-        tok = json.loads(TOKEN.read_text())
+    tok = json.loads(TOKEN.read_text()) if TOKEN.exists() else None
+    if tok and set(SCOPES.split()) <= set(tok.get("scope", "").split()):  # else re-login for new scopes
         if tok["expires_at"] > time.time() + 60:
             return tok["access_token"]
         if tok.get("refresh_token"):
@@ -107,6 +108,21 @@ def api(token, method, path, body=None, raise_http=False):
     raise SystemExit(f"{method} {path}: rate limited too many times")
 
 
+def set_cover(token, playlist_id, image):
+    """Spotify wants a base64 JPEG of at most 256 KB."""
+    import cv2  # only needed here
+    img = cv2.resize(cv2.imread(str(image)), (640, 640), interpolation=cv2.INTER_AREA)
+    for q in range(90, 40, -5):
+        jpg = cv2.imencode(".jpg", img, [cv2.IMWRITE_JPEG_QUALITY, q])[1].tobytes()
+        b64 = base64.b64encode(jpg)
+        if len(b64) <= 256 * 1024:
+            break
+    req = urllib.request.Request(f"{API}/playlists/{playlist_id}/images", data=b64, method="PUT",
+                                 headers={"Authorization": f"Bearer {token}", "Content-Type": "image/jpeg"})
+    with urllib.request.urlopen(req) as r:
+        print(f"cover set (HTTP {r.status}, JPEG q={q}, {len(b64) // 1024} KB base64)")
+
+
 def norm(s):
     return "".join(c for c in (s or "").lower() if c.isalnum())
 
@@ -141,9 +157,14 @@ def main():
     ap.add_argument("--client-id", required=True)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--name", default="Our Record Collection")
+    ap.add_argument("--cover", type=Path, help="image to upload as the cover of --playlist, then exit")
+    ap.add_argument("--playlist", help="playlist ID for --cover")
     args = ap.parse_args()
 
     token = login(args.client_id)
+    if args.cover:
+        set_cover(token, args.playlist, args.cover)
+        return
     records = json.loads(Path("docs/collection.json").read_text())
     the = lambda s: (s or "").lower().removeprefix("the ")
     records.sort(key=lambda r: (the(r["artist"]), r["year"] or "", the(r["title"])))

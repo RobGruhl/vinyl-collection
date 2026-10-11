@@ -1,0 +1,459 @@
+{
+ "ABBA|Arrival": {
+  "id": "1V6a99EbTTIegOhWoPxYI9",
+  "name": "Arrival",
+  "artist": "ABBA",
+  "tracks": 12
+ },
+ "Alison Krauss & Union Station|Paper Airplane": {
+  "id": "2Uht6R8C03U8X8kaUZrDAB",
+  "name": "Paper Airplane",
+  "artist": "Alison Krauss & Union Station",
+  "tracks": 11
+ },
+ "Amy Winehouse|Back to Black": {
+  "id": "097eYvf9NKjFnv4xA9s2oV",
+  "name": "Back To Black",
+  "artist": "Amy Winehouse",
+  "tracks": 11
+ },
+ "Angine de Poitrine|Vol. II": {
+  "id": "3FqqIeynZXFBcyLS9FlWMo",
+  "name": "Vol.II",
+  "artist": "Angine de Poitrine",
+  "tracks": 6
+ },
+ "Ava Luna|Histoire de Melody Nelson": null,
+ "The Avett Brothers|I and Love and You": {
+  "id": "2PPFtYUnnqMYflIEn3b7ON",
+  "name": "I And Love And You",
+  "artist": "The Avett Brothers",
+  "tracks": 13
+ },
+ "The Avett Brothers|Closer Than Together": {
+  "id": "0TlxSUyEa0YzcLrnXfqasZ",
+  "name": "Closer Than Together",
+  "artist": "The Avett Brothers",
+  "tracks": 13
+ },
+ "Better Oblivion Community Center|Better Oblivion Community Center": {
+  "id": "0uJIxkI8D0rR4shEIKeiDs",
+  "name": "Better Oblivion Community Center",
+  "artist": "Better Oblivion Community Center, Conor Oberst",
+  "tracks": 10
+ },
+ "Bikini Kill|New Radio": [
+  "4DgsvJNNGvV5WPQ40qR3R8",
+  "3n0zZ1V9PXLsxtyTiqDhuQ",
+  "2gnYFQWMzj8bNX4dDJyWzW"
+ ],
+ "Billie Eilish|When We All Fall Asleep, Where Do We Go": {
+  "id": "0S0KGZnfBGSIssfF54WSJh",
+  "name": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+  "artist": "Billie Eilish",
+  "tracks": 14
+ },
+ "Billie Eilish|Happier Than Ever": {
+  "id": "0JGOiO34nwfUdDrD612dOp",
+  "name": "Happier Than Ever",
+  "artist": "Billie Eilish",
+  "tracks": 16
+ },
+ "Bon Iver|For Emma, Forever Ago": {
+  "id": "7EJ0OT5ZqybXxcYRa6mccM",
+  "name": "For Emma, Forever Ago",
+  "artist": "Bon Iver",
+  "tracks": 9
+ },
+ "Bon Iver|Bon Iver, Bon Iver": {
+  "id": "2LpfNj3vB5rOXfaawLcOBg",
+  "name": "Bon Iver, Bon Iver",
+  "artist": "Bon Iver",
+  "tracks": 10
+ },
+ "Bonnie Guitar|Whispering Hope": null,
+ "boygenius|boygenius": {
+  "id": "6RjlLIuDFC8Dw91yRAdPz9",
+  "name": "boygenius",
+  "artist": "boygenius",
+  "tracks": 6
+ },
+ "boygenius|the record": {
+  "id": "0e9GjrztzBw8oMC6n2CDeI",
+  "name": "the record",
+  "artist": "boygenius",
+  "tracks": 12
+ },
+ "Bright Eyes|I'm Wide Awake, It's Morning": {
+  "id": "6MwSuZphL6GmuSVIYUGUF7",
+  "name": "I'm Wide Awake, It's Morning",
+  "artist": "Bright Eyes",
+  "tracks": 10
+ },
+ "Béla Fleck & Abigail Washburn|Béla Fleck & Abigail Washburn": {
+  "id": "18Kf1ocHyxnqJ2VCuS6Utm",
+  "name": "Béla Fleck & Abigail Washburn",
+  "artist": "Béla Fleck, Abigail Washburn",
+  "tracks": 12
+ },
+ "Charli XCX|Charli": {
+  "id": "386IqvSuljaZsMjwDGGdLj",
+  "name": "Charli",
+  "artist": "Charli xcx",
+  "tracks": 15
+ },
+ "Cults|Motels LP": "24OhrNKTXDOOMe2JajwvOp",
+ "Cyndi Lauper|She's So Unusual": {
+  "id": "1FvdZ1oizXwF9bxogujoF0",
+  "name": "She's So Unusual",
+  "artist": "Cyndi Lauper",
+  "tracks": 10
+ },
+ "Death Cab for Cutie|Plans": {
+  "id": "4guW5WPxFzHrXg04FPC9v9",
+  "name": "Plans",
+  "artist": "Death Cab for Cutie",
+  "tracks": 13
+ },
+ "Elliott Smith|An Introduction to... Elliott Smith": {
+  "id": "5d51kjLqwEZzH70H5NPXbI",
+  "name": "An Introduction to Elliott Smith",
+  "artist": "Elliott Smith",
+  "tracks": 14
+ },
+ "The Faint|Danse Macabre": {
+  "id": "4avCxtm2y5e8so2aipSIfV",
+  "name": "Danse Macabre",
+  "artist": "The Faint",
+  "tracks": 9
+ },
+ "Fleet Foxes|Fleet Foxes": {
+  "id": "5GRnydamKvIeG46dycID6v",
+  "name": "Fleet Foxes",
+  "artist": "Fleet Foxes",
+  "tracks": 11
+ },
+ "fun.|Aim and Ignite": {
+  "id": "39vNHJ3nDr6oO9mWLrRpsI",
+  "name": "Aim and Ignite (Deluxe Version)",
+  "artist": "fun.",
+  "tracks": 15
+ },
+ "fun.|Some Nights": {
+  "id": "7iycyHwOW2plljYIK6I1Zo",
+  "name": "Some Nights",
+  "artist": "fun.",
+  "tracks": 12
+ },
+ "Garbage|Milk": null,
+ "Indigo Girls|Indigo Girls": {
+  "id": "1rkuKm5mDoauq9XKjRV94x",
+  "name": "Indigo Girls (Expanded Edition)",
+  "artist": "Indigo Girls",
+  "tracks": 12
+ },
+ "Ingrid Michaelson|Be OK": {
+  "id": "26OZ2w8TlwMUmA0GMpQL1U",
+  "name": "Be OK",
+  "artist": "Ingrid Michaelson",
+  "tracks": 11
+ },
+ "Jacob Collier|Djesse Vol. 4": {
+  "id": "13r6eqjYlKELFQlNvVCBz1",
+  "name": "Djesse Vol. 4",
+  "artist": "Jacob Collier",
+  "tracks": 16
+ },
+ "Jawbreaker|Dear You": {
+  "id": "7KyQp50wm9lprjaW6UMAkI",
+  "name": "Dear You",
+  "artist": "Jawbreaker",
+  "tracks": 13
+ },
+ "Jefferson Airplane|2400 Fulton Street": null,
+ "Johnny Cash|The Essential Johnny Cash": {
+  "id": "4E2eUhFHqTG2pu9MN1NDIF",
+  "name": "The Essential Johnny Cash",
+  "artist": "Johnny Cash",
+  "tracks": 36
+ },
+ "Joni Mitchell|Blue": {
+  "id": "1vz94WpXDVYIEGja8cjFNa",
+  "name": "Blue",
+  "artist": "Joni Mitchell",
+  "tracks": 10
+ },
+ "Julien Baker|Sprained Ankle": {
+  "id": "3ZNnGzTrQt8ZXYxaXZX5c8",
+  "name": "Sprained Ankle",
+  "artist": "Julien Baker",
+  "tracks": 9
+ },
+ "Julien Baker|Turn Out the Lights": {
+  "id": "3AV0YFhIzY0LDeaJPU5x3O",
+  "name": "Turn Out the Lights",
+  "artist": "Julien Baker",
+  "tracks": 11
+ },
+ "Kishi Bashi|Lighght": {
+  "id": "3vwhMjwukv3LNZpQu57RWR",
+  "name": "Lighght",
+  "artist": "Kishi Bashi",
+  "tracks": 11
+ },
+ "Lady Gaga|The Fame": {
+  "id": "1jpUMnKpRlng1OJN7LJauV",
+  "name": "The Fame",
+  "artist": "Lady Gaga",
+  "tracks": 15
+ },
+ "Lana Del Rey|Born to Die": {
+  "id": "4X8hAqIWpQyQks2yRhyqs4",
+  "name": "Born To Die",
+  "artist": "Lana Del Rey",
+  "tracks": 13
+ },
+ "Lana Del Rey|Lust for Life": {
+  "id": "7xYiTrbTL57QO0bb4hXIKo",
+  "name": "Lust For Life",
+  "artist": "Lana Del Rey",
+  "tracks": 16
+ },
+ "Lana Del Rey|Norman Fucking Rockwell!": {
+  "id": "5XpEKORZ4y6OrCZSKsi46A",
+  "name": "Norman Fucking Rockwell!",
+  "artist": "Lana Del Rey",
+  "tracks": 14
+ },
+ "Lana Del Rey|Did You Know That There's a Tunnel Under Ocean Blvd": {
+  "id": "5HOHne1wzItQlIYmLXLYfZ",
+  "name": "Did you know that there's a tunnel under Ocean Blvd",
+  "artist": "Lana Del Rey",
+  "tracks": 16
+ },
+ "Leonard Cohen|Greatest Hits": "06TH14tYg5Xy6bauQtgxnt",
+ "Lizzo|Cuz I Love You": {
+  "id": "6dFFcYQ8VhifgdKgYY5LYL",
+  "name": "Cuz I Love You",
+  "artist": "Lizzo",
+  "tracks": 11
+ },
+ "Lorde|Pure Heroine": {
+  "id": "0rmhjUgoVa17LZuS8xWQ3v",
+  "name": "Pure Heroine",
+  "artist": "Lorde",
+  "tracks": 10
+ },
+ "Lucy Dacus|No Burden": {
+  "id": "5GrvI6jAlVS3KlhCbSmWLh",
+  "name": "No Burden",
+  "artist": "Lucy Dacus",
+  "tracks": 9
+ },
+ "Lucy Dacus|Historian": {
+  "id": "0LqhbUfmHsxovfSirhEIGu",
+  "name": "Historian",
+  "artist": "Lucy Dacus",
+  "tracks": 10
+ },
+ "Lucy Dacus|Forever Is a Feeling": {
+  "id": "2PedUC4azy5ywqWp8gVVrs",
+  "name": "Forever Is A Feeling",
+  "artist": "Lucy Dacus",
+  "tracks": 13
+ },
+ "Maggie Rogers|Now That the Light Is Fading": {
+  "id": "16wZsyXQ463IYlrXyJnRfY",
+  "name": "Now That The Light Is Fading",
+  "artist": "Maggie Rogers",
+  "tracks": 5
+ },
+ "Massive Attack|Mezzanine": {
+  "id": "49MNmJhZQewjt06rpwp6QR",
+  "name": "Mezzanine",
+  "artist": "Massive Attack",
+  "tracks": 11
+ },
+ "Mazzy Star|So Tonight That I Might See": {
+  "id": "5K18gTgac0q6Jma5HkV1vA",
+  "name": "So Tonight That I Might See",
+  "artist": "Mazzy Star",
+  "tracks": 10
+ },
+ "Melanie|Gather Me": {
+  "id": "5THcElsOkPsIopiOQj18An",
+  "name": "Gather Me",
+  "artist": "Melanie",
+  "tracks": 13
+ },
+ "Neutral Milk Hotel|In the Aeroplane Over the Sea": {
+  "id": "17q5eeNk3HAjX1gzQnkTX7",
+  "name": "In the Aeroplane Over the Sea",
+  "artist": "Neutral Milk Hotel",
+  "tracks": 11
+ },
+ "Nick Drake|Pink Moon": {
+  "id": "5mwOo1zikswhmfHvtqVSXg",
+  "name": "Pink Moon",
+  "artist": "Nick Drake",
+  "tracks": 11
+ },
+ "Nikki Lane|Highway Queen": {
+  "id": "3OZVgu6jFzr2N045WTLWa3",
+  "name": "Highway Queen",
+  "artist": "Nikki Lane",
+  "tracks": 10
+ },
+ "Nina Simone|I Put a Spell on You": {
+  "id": "3ofZeSWPHZOE5WC2tNZDez",
+  "name": "I Put A Spell On You",
+  "artist": "Nina Simone",
+  "tracks": 12
+ },
+ "Norah Jones|Come Away with Me": {
+  "id": "3ul9GmXlTkmRMh3OciXxFR",
+  "name": "Come Away With Me (Remastered 2022)",
+  "artist": "Norah Jones",
+  "tracks": 14
+ },
+ "Phoebe Bridgers|Stranger in the Alps": {
+  "id": "0qWcLfCZ8wtcoOdX14oGNI",
+  "name": "Stranger in the Alps",
+  "artist": "Phoebe Bridgers",
+  "tracks": 11
+ },
+ "Pink Floyd|The Dark Side of the Moon": {
+  "id": "4LH4d3cOWNNsVw41Gqt2kv",
+  "name": "The Dark Side of the Moon",
+  "artist": "Pink Floyd",
+  "tracks": 10
+ },
+ "Portishead|Dummy": {
+  "id": "3539EbNgIdEDGBKkUf4wno",
+  "name": "Dummy",
+  "artist": "Portishead",
+  "tracks": 11
+ },
+ "The Postal Service|Give Up": {
+  "id": "1BSwkKATGVCMgNuN8ve7mz",
+  "name": "Give Up",
+  "artist": "The Postal Service",
+  "tracks": 10
+ },
+ "The Raveonettes|Lust Lust Lust": {
+  "id": "2b5uYxqX57PMccTw4XH6FI",
+  "name": "Lust Lust Lust",
+  "artist": "The Raveonettes",
+  "tracks": 12
+ },
+ "Regina Spektor|Begin to Hope": {
+  "id": "4L4tcx3itXbtx5kuchKhFE",
+  "name": "Begin to Hope",
+  "artist": "Regina Spektor",
+  "tracks": 19
+ },
+ "Shovels & Rope|O' Be Joyful": {
+  "id": "4nuJVavarQXSOd2MP7892J",
+  "name": "O' Be Joyful",
+  "artist": "Shovels & Rope",
+  "tracks": 11
+ },
+ "Simon & Garfunkel|Parsley, Sage, Rosemary and Thyme": {
+  "id": "1sh32o99zA04PJIUJUpEj7",
+  "name": "Parsley, Sage, Rosemary And Thyme",
+  "artist": "Simon & Garfunkel",
+  "tracks": 12
+ },
+ "St. Vincent|St. Vincent": {
+  "id": "2CJnMhwEEkS8R1ctgt5llf",
+  "name": "St. Vincent",
+  "artist": "St. Vincent",
+  "tracks": 11
+ },
+ "St. Vincent|Masseduction": {
+  "id": "4RoOGpdrgfiIUyv0kLaC4e",
+  "name": "MASSEDUCTION",
+  "artist": "St. Vincent",
+  "tracks": 13
+ },
+ "Sufjan Stevens|Illinois": {
+  "id": "1pOl0KEC1iQnA6F0XxV4To",
+  "name": "Illinois",
+  "artist": "Sufjan Stevens",
+  "tracks": 22
+ },
+ "Sufjan Stevens|Carrie & Lowell": {
+  "id": "64xtjfsPHNHch0CZ7fPTjS",
+  "name": "Carrie & Lowell",
+  "artist": "Sufjan Stevens",
+  "tracks": 11
+ },
+ "Taylor Swift|The Life of a Showgirl": {
+  "id": "4a6NzYL1YHRUgx9e3YZI6I",
+  "name": "The Life of a Showgirl",
+  "artist": "Taylor Swift",
+  "tracks": 12
+ },
+ "Tracey Thorn|Record": {
+  "id": "1gFVOwgnwIs1immu99m3iJ",
+  "name": "Record",
+  "artist": "Tracey Thorn",
+  "tracks": 9
+ },
+ "Tracy Chapman|Tracy Chapman": {
+  "id": "6hmmX5UP4rIvOpGSaPerV8",
+  "name": "Tracy Chapman",
+  "artist": "Tracy Chapman",
+  "tracks": 11
+ },
+ "Various Artists|Nuggets: Come to the Sunshine": null,
+ "Various Artists|Stars Kill Rock": {
+  "id": "1NaMk3lOJQ1jeGZn0Yn0Dl",
+  "name": "Stars Kill Rock",
+  "artist": "Various Artists",
+  "tracks": 17
+ },
+ "Various Artists|Pulp Fiction": {
+  "id": "2Rosrqy5gnHaKLrh2ctnVq",
+  "name": "Pulp Fiction (Music From The Motion Picture)",
+  "artist": "Various Artists",
+  "tracks": 20
+ },
+ "Various Artists|O Brother, Where Art Thou": {
+  "id": "7gzX88qS3Vx2r87g5pbdfJ",
+  "name": "O Brother, Where Art Thou? (Original Motion Picture Soundtrack)",
+  "artist": "Various Artists",
+  "tracks": 19
+ },
+ "Various Artists|Juno": {
+  "id": "3Dm3Kc5oOFtesVJe5TF1HG",
+  "name": "Juno - Music From The Motion Picture",
+  "artist": "Various Artists",
+  "tracks": 19
+ },
+ "Various Artists|Encanto": "25L8ck3KGcmCo3901ztPzR",
+ "Various Artists|Barbie The Album": {
+  "id": "0BaIaHcyBXuOWeM4Aas4EW",
+  "name": "Barbie The Album",
+  "artist": "Various Artists",
+  "tracks": 17
+ },
+ "Violent Femmes|Violent Femmes": {
+  "id": "0Ojio25IPzIrw1rUmgrhrG",
+  "name": "Violent Femmes",
+  "artist": "Violent Femmes",
+  "tracks": 12
+ },
+ "The White Stripes|Greatest Hits": {
+  "id": "6iOP7HgYAk3x5i19Os1d7v",
+  "name": "The White Stripes Greatest Hits",
+  "artist": "The White Stripes, Jack White",
+  "tracks": 26
+ },
+ "Yo-Yo Ma|Six Evolutions – Bach: Cello Suites": {
+  "id": "6XaCGjrIRFiS5D5IVg66vb",
+  "name": "Six Evolutions - Bach: Cello Suites",
+  "artist": "Johann Sebastian Bach, Yo-Yo Ma",
+  "tracks": 36
+ }
+}

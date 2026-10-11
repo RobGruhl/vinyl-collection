@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rob's Records</title>
+<meta name="description" content="A browsable shelf of Rob's vinyl collection.">
+<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2316130f'/><circle cx='50' cy='50' r='34' fill='none' stroke='%23333' stroke-width='2'/><circle cx='50' cy='50' r='24' fill='none' stroke='%23333' stroke-width='2'/><circle cx='50' cy='50' r='14' fill='%23d9542b'/><circle cx='50' cy='50' r='3' fill='%2316130f'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4efe6;
+    --surface: #fffaf2;
+    --ink: #1d1a16;
+    --muted: #6f665a;
+    --line: #e2d8c8;
+    --accent: #d9542b;
+    --accent-ink: #fff;
+    --chip: #ebe3d5;
+    --shadow: 0 1px 2px rgb(40 30 20 / .08), 0 6px 18px rgb(40 30 20 / .10);
+    --radius: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16130f;
+      --surface: #201c17;
+      --ink: #f1ebe1;
+      --muted: #a69c8e;
+      --line: #342e26;
+      --accent: #ec6a3f;
+      --chip: #2a251f;
+      --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 22px rgb(0 0 0 / .45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16130f; --surface: #201c17; --ink: #f1ebe1; --muted: #a69c8e;
+    --line: #342e26; --accent: #ec6a3f; --chip: #2a251f;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 22px rgb(0 0 0 / .45);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.45 Inter, system-ui, -apple-system, sans-serif;
+  }
+
+  header {
+    padding: 28px 16px 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .sub { color: var(--muted); margin: 8px 0 0; }
+  .sub b { color: var(--ink); font-weight: 600; }
+
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .controls-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .search {
+    flex: 1 1 220px;
+    min-width: 0;
+    position: relative;
+  }
+  .search input {
+    width: 100%;
+    font: inherit;
+    font-size: 16px; /* no iOS zoom */
+    padding: 9px 12px 9px 34px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    outline: none;
+  }
+  .search input:focus { border-color: var(--accent); }
+  .search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+  select {
+    font: inherit;
+    font-size: 15px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .chips { display: flex; gap: 6px; }
+  .chip {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: var(--chip);
+    color: var(--ink);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .chip .n { opacity: .6; margin-left: 4px; font-variant-numeric: tabular-nums; }
+
+  main { max-width: 1200px; margin: 0 auto; padding: 8px 16px 48px; }
+  .letter {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--muted);
+    margin: 22px 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 22px 16px;
+  }
+  @media (max-width: 420px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  }
+
+  .card {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    min-width: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sleeve {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--chip);
+    box-shadow: var(--shadow);
+    transition: transform .18s ease;
+  }
+  .card:hover .sleeve, .card:focus-visible .sleeve { transform: translateY(-3px); }
+  .card:focus-visible .sleeve { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .sleeve img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sleeve .blank {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: Fraunces, Georgia, serif; font-size: 3rem; color: var(--muted);
+  }
+  .badge {
+    position: absolute;
+    top: 6px; left: 6px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: .02em;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .meta { padding-top: 8px; min-width: 0; }
+  .artist { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .title { font-size: 14px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .unknown .artist, .unknown .title { font-style: italic; }
+
+  .empty { color: var(--muted); text-align: center; padding: 48px 0; }
+
+  dialog {
+    border: 0;
+    padding: 0;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--ink);
+    width: min(520px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    box-shadow: 0 20px 60px rgb(0 0 0 / .35);
+  }
+  dialog::backdrop { background: rgb(10 8 6 / .6); backdrop-filter: blur(3px); }
+  .d-cover { aspect-ratio: 1; background: var(--chip); position: relative; }
+  .d-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .d-body { padding: 16px 18px 20px; }
+  .d-body h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.5rem; line-height: 1.15; margin: 0; }
+  .d-body .d-artist { font-size: 1.05rem; margin: 4px 0 10px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
+  .facts li { background: var(--chip); border-radius: 999px; padding: 3px 10px; font-size: 13px; }
+  .note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .d-body a { color: var(--accent); font-weight: 500; }
+  .close {
+    position: absolute; top: 10px; right: 10px;
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 0; background: rgb(0 0 0 / .55); color: #fff;
+    font-size: 20px; line-height: 1; cursor: pointer;
+  }
+
+  footer { max-width: 1200px; margin: 0 auto; padding: 0 16px 32px; color: var(--muted); font-size: 13px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Rob's Records</h1>
+  <p class="sub" id="summary">Loading the shelf…</p>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search artist or album" autocomplete="off" aria-label="Search artist or album">
+    </label>
+    <select id="sort" aria-label="Sort">
+      <option value="artist">Artist A–Z</option>
+      <option value="title">Album A–Z</option>
+      <option value="year">Newest first</option>
+      <option value="oldest">Oldest first</option>
+      <option value="shelf">Shelf order</option>
+    </select>
+    <div class="chips" role="group" aria-label="Filter">
+      <button class="chip" data-filter="all" aria-pressed="true">All<span class="n" id="n-all"></span></button>
+      <button class="chip" data-filter="needs" aria-pressed="false">Needs ID<span class="n" id="n-needs"></span></button>
+    </div>
+  </div>
+</div>
+
+<main id="shelf"></main>
+
+<footer>
+  Covers via the <a href="https://coverartarchive.org/">Cover Art Archive</a> and photos of the actual sleeves;
+  release data from <a href="https://musicbrainz.org/">MusicBrainz</a>.
+</footer>
+
+<dialog id="detail" aria-label="Record details">
+  <div class="d-cover" id="d-cover"></div>
+  <button class="close" id="d-close" aria-label="Close">×</button>
+  <div class="d-body" id="d-body"></div>
+</dialog>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const state = { q: "", sort: "artist", filter: "all" };
+let records = [];
+
+const sortKey = (s) => (s || "").replace(/^(the|a|an)\s+/i, "").toLocaleLowerCase();
+const artistName = (r) => r.artist ?? "Unknown artist";
+const albumTitle = (r) => r.title ?? (r.artist ? "Title unknown" : "Needs ID");
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function visible() {
+  const q = state.q.trim().toLocaleLowerCase();
+  let list = records.filter((r) =>
+    (state.filter === "all" || r.needsId) &&
+    (!q || `${r.artist ?? ""} ${r.title ?? ""} ${r.year ?? ""}`.toLocaleLowerCase().includes(q)));
+  const by = {
+    artist: (a, b) => (a.artist ? 0 : 1) - (b.artist ? 0 : 1) || sortKey(a.artist).localeCompare(sortKey(b.artist)) || (a.year ?? "").localeCompare(b.year ?? ""),
+    title: (a, b) => (a.title ? 0 : 1) - (b.title ? 0 : 1) || sortKey(a.title).localeCompare(sortKey(b.title)),
+    year: (a, b) => (b.year ?? "0").localeCompare(a.year ?? "0"),
+    oldest: (a, b) => (a.year ?? "9999").localeCompare(b.year ?? "9999"),
+    shelf: (a, b) => a.order - b.order,
+  }[state.sort];
+  return list.sort(by);
+}
+
+function groupLabel(r) {
+  if (state.sort === "artist") {
+    if (!r.artist) return "?";
+    const c = sortKey(r.artist)[0].toUpperCase();
+    return /[A-Z]/.test(c) ? c : "#";
+  }
+  if (state.sort === "year" || state.sort === "oldest") return r.year ? `${r.year.slice(0, 3)}0s` : "Year unknown";
+  return null;
+}
+
+function card(r) {
+  const unknown = !r.artist;
+  return `<button class="card${unknown ? " unknown" : ""}" data-id="${r.id}">
+    <div class="sleeve">
+      ${r.cover ? `<img src="${r.cover}" alt="" loading="lazy" decoding="async">` : `<span class="blank">?</span>`}
+      ${r.needsId ? `<span class="badge">Needs ID</span>` : ""}
+    </div>
+    <div class="meta">
+      <div class="artist">${esc(artistName(r))}</div>
+      <div class="title">${esc(albumTitle(r))}</div>
+    </div>
+  </button>`;
+}
+
+function render() {
+  const list = visible();
+  const shelf = $("#shelf");
+  if (!list.length) { shelf.innerHTML = `<p class="empty">Nothing on the shelf matches “${esc(state.q)}”.</p>`; return; }
+  let html = "", current, open = false;
+  for (const r of list) {
+    const g = groupLabel(r);
+    if (g !== current || !open) {
+      if (open) html += "</div>";
+      if (g) html += `<h2 class="letter">${esc(g)}</h2>`;
+      html += `<div class="grid">`;
+      open = true; current = g;
+    }
+    html += card(r);
+  }
+  shelf.innerHTML = html + "</div>";
+}
+
+function showDetail(id) {
+  const r = records.find((x) => x.id === id);
+  if (!r) return;
+  $("#d-cover").innerHTML = r.cover ? `<img src="${r.cover}" alt="Cover of ${esc(albumTitle(r))}">` : "";
+  const facts = [r.year, r.format].filter(Boolean).map((f) => `<li>${esc(f)}</li>`).join("");
+  $("#d-body").innerHTML = `
+    <h2>${esc(albumTitle(r))}</h2>
+    <div class="d-artist">${esc(artistName(r))}</div>
+    ${facts ? `<ul class="facts">${facts}</ul>` : ""}
+    ${r.notes ? `<p class="note">${esc(r.notes)}</p>` : ""}
+    ${r.mbid ? `<a href="https://musicbrainz.org/release-group/${r.mbid}" target="_blank" rel="noopener">View on MusicBrainz ↗</a>` : ""}`;
+  $("#detail").showModal();
+}
+
+$("#shelf").addEventListener("click", (e) => {
+  const c = e.target.closest(".card");
+  if (c) showDetail(c.dataset.id);
+});
+$("#d-close").addEventListener("click", () => $("#detail").close());
+$("#detail").addEventListener("click", (e) => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+$("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+$("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
+  state.filter = b.dataset.filter;
+  document.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+}));
+
+fetch("collection.json")
+  .then((r) => r.json())
+  .then((data) => {
+    records = data;
+    const needs = data.filter((r) => r.needsId).length;
+    const artists = new Set(data.filter((r) => r.artist && r.artist !== "Various Artists").map((r) => r.artist)).size;
+    $("#summary").innerHTML = `<b>${data.length}</b> records · <b>${artists}</b> artists`;
+    $("#n-all").textContent = data.length;
+    $("#n-needs").textContent = needs;
+    if (!needs) $(".chips").hidden = true;
+    render();
+  })
+  .catch(() => { $("#summary").textContent = "Couldn't load the collection."; });
+</script>
+</body>
+</html>
